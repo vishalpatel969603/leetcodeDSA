@@ -2,7 +2,7 @@ class Solution {
 public:
     int findNumbers(vector<int>& nums) {
         int n=nums.size();
-        vector<int> v;
+      int ans=0;
         int j=0;
         for(int i=0;i<n;i++){    
             int len=0;
@@ -10,13 +10,10 @@ public:
                 nums[j]=nums[j]/10;
                    len++;
                }
-            v.push_back(len);
-            j++;   
+            j++;
+            if(len%2==0) ans++;   
         }
-        int count = 0;
-        for(int i=0;i<n;i++){
-            if(v[i]%2==0) count++;
-         }
-        return count;   
+       
+        return ans;   
     }
 };
