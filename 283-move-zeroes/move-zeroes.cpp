@@ -5,13 +5,13 @@ public:
     int j=0;
     for(int i=0; i<n;i++ ){
         if(nums[i]!=0){
-            nums[j]=nums[i];
+           int v=nums[i];
+            nums[i]=0;
+             nums[j]=v;
              j++;
         }
-    }
-     while(j<n){
-        nums[j]=0;
-        j++;
+    
+     
      }     
     }
 };
