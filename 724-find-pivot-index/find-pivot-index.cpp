@@ -9,10 +9,9 @@ public:
            int j=0;
            int rightsum = 0;
            for(int i=0;i<n;i++){
-               leftsum = leftsum - nums[j];
+               leftsum -= nums[j];
                if(leftsum==rightsum) return j;
-               rightsum +=nums[j];
-               j++;
+               rightsum +=nums[j++];
            }
            return -1;
     }
