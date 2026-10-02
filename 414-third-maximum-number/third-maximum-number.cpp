@@ -1,44 +1,27 @@
-
 class Solution {
 public:
     int thirdMax(vector<int>& nums) {
-
-        int n = nums.size();
-
-        int firstMax = INT_MIN;
-        int secondMax = INT_MIN;
-        int thirdMax = INT_MIN;
-
-        for(int i = 0; i < n; i++) {
-            firstMax = max(firstMax, nums[i]);
+      int n=nums.size();
+      long long firstmx = -1e18;
+      for(int i=0;i<n;i++){
+          firstmx= max(firstmx ,(long long) nums[i]);
+      }  
+     long long Secondmx = -1e18;
+      for(int i=0;i<n;i++){
+          if(firstmx > nums[i]){
+            Secondmx = max(Secondmx,(long long) nums[i]);
+          }
+      } 
+      long long thirdmx = -1e18;
+      for(int i=0;i<n;i++){
+        if( Secondmx > nums[i]){
+            thirdmx = max( thirdmx,(long long) nums[i]);
         }
-
-        bool flag1 = false;
-
-        for(int i = 0; i < n; i++) {
-            if(nums[i] == firstMax) continue;
-            if(!flag1 || nums[i] > secondMax) {
-                secondMax = nums[i];
-                flag1 = true;
-            }
-        }
-
-        if(!flag1) return firstMax;
-
-        bool flag2 = false;
-
-        for(int i = 0; i < n; i++) {
-            if(nums[i] == firstMax || nums[i] == secondMax) continue;
-            if(!flag2 || nums[i] > thirdMax) {
-                thirdMax = nums[i];
-                flag2 = true;
-            }
-        }
-
-        if(!flag2) return firstMax;
-
-        return thirdMax;
-
-
+      }
+      for(int i=0;i<n;i++){
+        if(thirdmx == nums[i]) return thirdmx;
+      }
+      return firstmx;
+     
     }
 };
