@@ -20,20 +20,33 @@ public:
              for(int i=1;i<=n;i++){
               tempA = tempA -> next;
             }
+            while(tempA != tempB){
+              tempA = tempA ->next;
+              tempB = tempB ->next;
+            }
+            return tempA;
          }
         else{
-              n =lenB-lenA;
-            for(int i=1;i<=n;i++){
-                tempB = tempB -> next;
+          n = lenB -lenA;
+          for(int i=1;i<=n;i++){
+          tempB = tempB -> next;
             }
+            while(tempA != tempB){
+              tempA = tempA ->next;
+              tempB = tempB ->next;
+            }
+            return tempA;
          }
+         // else{
+         //       n =lenB-lenA;
+         //     for(int i=1;i<=n;i++){
+         //         tempB = tempB -> next;
+         //     }
+         //  }
+         // while(tempA != NULL){
+         //     if(tempA == tempB) return tempA;     
+         //         tempA = tempA ->next;
+         //         tempB = tempB ->next;
         
-        while(tempA != NULL){
-            if(tempA == tempB) return tempA;
-                
-                tempA = tempA ->next;
-                tempB = tempB ->next;
-        }
-        return NULL;  
     }
 };
