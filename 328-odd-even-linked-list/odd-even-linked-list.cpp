@@ -6,11 +6,6 @@ public:
         ListNode* tl = lo;
         ListNode* th = hi;
         ListNode* t = head;
-        int n=0;
-        // while(t != NULL){
-        //     t = t ->next;
-        //     n++;
-        // }
         int i=0;
         while(t != NULL){
             if(i%2==0){
